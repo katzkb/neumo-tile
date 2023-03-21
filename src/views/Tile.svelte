@@ -1,9 +1,10 @@
 <script lang="ts">
   export let x: number
   export let y: number
+  export let n: number
 </script>
 <div class="tile" style="left:{x}px; top:{y}px;">
-  <div class="number">2</div>
+  <div class="number">{n}</div>
 </div>
 <style lang="scss">
   .tile {

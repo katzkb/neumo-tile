@@ -1,10 +1,14 @@
 <script lang="ts">
   import Tile from "./Tile.svelte"
+  import { Stage } from "../service/model/stage"
+  const stage = new Stage(4)
 </script>
 <div id="stage">
-  <Tile x=0   y=0/>
-  <Tile x=50  y=0/>
-  <Tile x=150 y=0/>
+  {#each stage.tiles as tileLine , y}
+    {#each tileLine as tile, x}
+      <Tile x={x*50} y={y*50} n={tile}/>
+    {/each}
+  {/each}
 </div>
 <style lang="scss">
   #stage {
