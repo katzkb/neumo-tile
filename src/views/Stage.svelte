@@ -11,7 +11,9 @@
   <div id="stage">
     {#each stage.tiles as tileCol, x}
       {#each tileCol as n, y}
-        <Tile x={x*50} y={y*50} n={n}/>
+        {#if n > 0}
+          <Tile x={x*50} y={y*50} n={n}/>
+        {/if}
       {/each}
     {/each}
   </div>
